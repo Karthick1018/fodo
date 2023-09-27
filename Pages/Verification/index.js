@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { useIsFocused, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 
 const Verification = () => {
@@ -15,7 +15,7 @@ const Verification = () => {
         <SafeAreaView>
             <View>
                 <TouchableOpacity onPress={onPressButton}>
-                    <Text style={{ fontSize: 20 }}>
+                    <Text style={styles.verificationtext}>
                         Verification
                     </Text>
                 </TouchableOpacity>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
     continuetext: {
         textAlign: 'center',
-        top: '50%'
+        top: '80%'
     },
     otpview: {
         height: '25%',
@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         top: '30%'
-    }
+    },
+    verificationtext: {
+        fontSize: 20,
+        top: '50%',
+        left: '5%'
+    },
 
 })
