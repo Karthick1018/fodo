@@ -14,13 +14,13 @@ const Login = () => {
                 <View
                     style={styles.logoview}>
                     <ImageBackground
-                        source={require('D:/E-commerce/fodo/assets/Logo.png')}
+                        source={require('../../assets/Logo.png')}
                         style={styles.logoimg} />
                 </View>
                 <View
                     style={styles.imgview}>
                     <ImageBackground
-                        source={require('D:/E-commerce/fodo/assets/image.png')}
+                        source={require('../../assets/image.png')}
                         style={styles.img} />
                 </View>
                 <View
@@ -41,9 +41,6 @@ const Login = () => {
                 <TouchableOpacity
                     style={styles.fbview}
                     onPress={() => Linking.openURL('https://www.facebook.com')}>
-                    {/* <Image
-                        source={require("D:/E-commerce/fodo/assets/Facebook - Negative.png")} 
-                        style={{height:'50%'}}/> */}
                     <Text style={styles.fbtext}>
                         Login with Facebook
                     </Text>
@@ -78,9 +75,9 @@ const styles = StyleSheet.create({
     },
     logoimg: {
         width: '70%',
-        height: "70%",
+        height: "90%",
         top: '30%',
-        marginLeft: '28%',
+        left: '28%',
     },
     imgview: {
         height: '45%',

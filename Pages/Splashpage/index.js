@@ -9,7 +9,7 @@ const Main = () => {
     const Image = () => {
         setTimeout(() => {
             navigation.replace('Login');
-        }, 1000); 
+        }, 3000); 
     };
     useEffect(() => {
         if (isFocused) {
@@ -21,7 +21,7 @@ const Main = () => {
         <SafeAreaView>
             <View>
                 <ImageBackground
-                    source={require("D:/E-commerce/fodo/assets/splash.gif")}
+                    source={require("../../assets/splash.gif")}
                     style={{ height: '100%',width:'100%' }}
                     resizeMode="cover"
                 >
