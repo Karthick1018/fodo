@@ -9,10 +9,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import { useNavigation } from '@react-navigation/native';
 
-
-
-
-
 const Items = () => {
     const [showButtons, setShowButtons] = useState(true);
     const [firstSetOfData, setFirstSetOfData] = useState([]);
@@ -153,7 +149,7 @@ const Items = () => {
                         </ScrollView>
                     )}
                 </View>
-                <TouchableOpacity style={styles.foodforview}>
+                <TouchableOpacity style={styles.foodforview} onPress={() => { navigation.navigate('Foods') }}>
                     <Text style={styles.foodfortext}>
                         Food for You
                     </Text>
@@ -197,7 +193,7 @@ const Items = () => {
                 />
             </ScrollView>
             <View style={{ height: '8%', flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 10, top: 15, marginTop: -10 }}>
-            <TouchableOpacity onPress={() => { navigation.navigate('Login'); }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Login'); }}>
                     <AntDesign name="home" size={24} color={activeIcon === 'home' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity >
                 <TouchableOpacity onPress={() => setActiveIcon('search1')} >
