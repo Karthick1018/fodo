@@ -7,8 +7,6 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from '@react-navigation/native';
 
-
-
 const Address = () => {
   const [selectedLocation, setSelectedLocation] = useState({
     latitude: 10.7392,
@@ -186,6 +184,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 15,
     borderBottomLeftRadius:15,
     justifyContent: 'center',
+    bottom:'-2%'
   },
   continuetext: {
     textAlign: 'center',

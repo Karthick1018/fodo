@@ -46,7 +46,9 @@ const styles = StyleSheet.create({
     },
     continuetext: {
         textAlign: 'center',
-        top: '80%'
+        top: '70%',
+        color:'#FFFFFF',
+        fontSize:18
     },
     otpview: {
         height: '25%',

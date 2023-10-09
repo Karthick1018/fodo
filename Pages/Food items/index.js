@@ -13,7 +13,7 @@ const Items = () => {
     const [showButtons, setShowButtons] = useState(true);
     const [firstSetOfData, setFirstSetOfData] = useState([]);
     const [secondSetOfData, setSecondSetOfData] = useState([]);
-    const [activeIcon, setActiveIcon] = useState('home');
+    const [activeIcon, setActiveIcon] = useState('search1');
 
     const carouselItems = [
         {
@@ -63,7 +63,7 @@ const Items = () => {
     const renderItemapi = ({ item }) => {
         const image = item.food.image;
         return (
-            <Card containerStyle={{ margin: 10, borderRadius: 20, borderColor: '#6DBC2B', borderWidth: 1, height: '70%' }} >
+            <Card containerStyle={{ margin: 10, borderRadius: 20, borderColor: '#f7f7f5', borderWidth: 1, height: '70%' }} >
                 <Image
                     source={{ uri: image }}
                     style={{ width: 100, height: 100 }}
@@ -202,7 +202,7 @@ const Items = () => {
                 <TouchableOpacity onPress={() => setActiveIcon('bells')} >
                     <AntDesign name="bells" size={24} color={activeIcon === 'bells' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => setActiveIcon('person')} >
+                <TouchableOpacity onPress={() => { navigation.navigate('Profile'); }} >
                     <Fontisto name="person" size={24} color={activeIcon === 'person' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity>
             </View>
