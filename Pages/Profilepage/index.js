@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Image, StatusBar } from "react-native";
-import { TextInput } from "react-native";
-import { Text } from "react-native";
-import { StyleSheet, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { StyleSheet, SafeAreaView, TouchableOpacity, View, Image, TextInput, Text, Linking } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { RadioButton } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native';
+import Entypop from "react-native-vector-icons/Entypo";
+
 
 const Profile = () => {
     const [email, setEmail] = useState('');
@@ -86,7 +85,6 @@ const Profile = () => {
                     underlineColorAndroid={'#000000'}
                 />
                 <Text style={{ color: 'red' }}>{phoneNumberError}</Text>
-
             </View>
             <View
                 style={styles.radioButtonsContainer}>
@@ -108,9 +106,33 @@ const Profile = () => {
                 <Text
                     style={styles.radioText}>Female</Text>
             </View>
-
-            <TouchableOpacity style={styles.profileview}>
-                <Text style={styles.profiletext}>
+            <View
+                style={styles.contactsview}>
+                <TouchableOpacity
+                    style={{ left: '50%' }}
+                    onPress={() => Linking.openURL('https://www.facebook.com')}>
+                    <Entypop name="facebook" size={30} color="#1e24d4" />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{ right: '-7%' }}
+                    onPress={() => Linking.openURL('https://www.instagram.com')}>
+                    <Entypop name="instagram" size={30} color="#d41e82" />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{ right: '30%' }}
+                    onPress={() => Linking.openURL('https://www.youtube.com')}>
+                    <Entypop name="youtube" size={30} color="#f20a29" />
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{ right: '60%' }}
+                    onPress={() => Linking.openURL('https://www.gmail.com')}>
+                    <Entypop name="mail" size={30} color="#f20a29" />
+                </TouchableOpacity>
+            </View>
+            <TouchableOpacity
+                style={styles.profileview}>
+                <Text
+                    style={styles.profiletext}>
                     Update Profile
                 </Text>
             </TouchableOpacity>
@@ -147,7 +169,8 @@ const styles = StyleSheet.create({
     changetext: {
         color: '#000000',
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        top: '10%'
     },
     nameview: {
         marginLeft: '8%',
@@ -175,15 +198,25 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     profileview: {
-        marginTop: '55%',
+        marginTop: '3%',
         backgroundColor: '#6DBC2B',
         height: '5%'
     },
     profiletext: {
         textAlign: 'center',
-        top: '8%',
+        top: '10%',
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 18,
+        color: '#FFFFFF'
+    },
+    contactsview: {
+        height: '10%',
+        marginTop: '30%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderRadius: 20,
+        backgroundColor: '#ede8e9'
     }
 })
 

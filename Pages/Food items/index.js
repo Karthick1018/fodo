@@ -63,27 +63,36 @@ const Items = () => {
     const renderItemapi = ({ item }) => {
         const image = item.food.image;
         return (
-            <Card containerStyle={{ margin: 10, borderRadius: 20, borderColor: '#f7f7f5', borderWidth: 1, height: '70%' }} >
+            <Card
+                containerStyle={{ margin: 10, borderRadius: 20, borderColor: '#f7f7f5', borderWidth: 1, height: '70%' }} >
                 <Image
                     source={{ uri: image }}
                     style={{ width: 100, height: 100 }}
                 />
-                <Text style={{ fontSize: 13, fontWeight: 'bold' }}>{item.food.label}</Text>
+                {/* <Text
+                    style={{ fontSize: 13, fontWeight: 'bold' }}>{item.food.label}
+                </Text> */}
             </Card>
         );
     };
 
     const renderItem = ({ item, index }) => {
         return (
-            <View style={styles.carouselItem}>
-                <Image source={item.image} style={{ width: 300, height: 200, left: '10%' }} />
+            <View
+                style={styles.carouselItem}>
+                <Image
+                    source={item.image}
+                    style={{ width: 300, height: 200, left: '10%' }} />
             </View>
         );
     };
     const renderItem1 = ({ item, index }) => {
         return (
-            <View style={styles.carouselItem}>
-                <Image source={item.image} style={{ width: 300, height: 200, left: '10%' }} />
+            <View
+                style={styles.carouselItem}>
+                <Image
+                    source={item.image}
+                    style={{ width: 300, height: 200, left: '10%' }} />
             </View>
         );
     };
@@ -94,9 +103,11 @@ const Items = () => {
     const navigation = useNavigation();
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView
+            style={styles.container}>
             <ScrollView>
-                <View style={styles.locationview}>
+                <View
+                    style={styles.locationview}>
                     <Ionicons
                         name="location"
                         size={25}
@@ -105,13 +116,15 @@ const Items = () => {
                     />
                     <TouchableOpacity>
                         <View>
-                            <Text style={styles.locationtext}>
+                            <Text
+                                style={styles.locationtext}>
                                 18, Dharapuram, Tamil Nadu, India
                             </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.menuview}>
+                <View
+                    style={styles.menuview}>
                     <TouchableOpacity
                         style={{ backgroundColor: '#f0ebeb', width: 50, height: 50, marginLeft: '3%', borderRadius: 10, justifyContent: 'center', alignItems: 'center' }}
                         onPress={toggleButtons}
@@ -120,37 +133,53 @@ const Items = () => {
                     </TouchableOpacity>
 
                     {showButtons && (
-                        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
-                            <TouchableOpacity style={styles.ratingButton}>
-                                <Text style={styles.ratingtext}>
+                        <ScrollView horizontal showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.scrollContainer}>
+                            <TouchableOpacity
+                                style={styles.ratingButton}>
+                                <Text
+                                    style={styles.ratingtext}>
                                     Rating 4.0+
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.ratingButton}>
-                                <Text style={styles.ratingtext}>
+                            <TouchableOpacity
+                                style={styles.ratingButton}
+                                onPress={() => { navigation.navigate('Foods') }}>
+                                <Text
+                                    style={styles.ratingtext}>
                                     Top eats
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.ratingButton}>
-                                <Text style={styles.ratingtext}>
+                            <TouchableOpacity
+                                style={styles.ratingButton}
+                                onPress={() => { navigation.navigate('Restaurant') }}>
+                                <Text
+                                    style={styles.ratingtext}>
                                     Reservation
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.ratingButton}>
-                                <Text style={styles.ratingtext}>
+                            <TouchableOpacity
+                                style={styles.ratingButton}>
+                                <Text
+                                    style={styles.ratingtext}>
                                     Orders
                                 </Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.ratingButton}>
-                                <Text style={styles.ratingtext}>
+                            <TouchableOpacity
+                                style={styles.ratingButton}>
+                                <Text
+                                    style={styles.ratingtext}>
                                     Offers
                                 </Text>
                             </TouchableOpacity>
                         </ScrollView>
                     )}
                 </View>
-                <TouchableOpacity style={styles.foodforview} onPress={() => { navigation.navigate('Foods') }}>
-                    <Text style={styles.foodfortext}>
+                <TouchableOpacity
+                    style={styles.foodforview}
+                    onPress={() => { navigation.navigate('Foods') }}>
+                    <Text
+                        style={styles.foodfortext}>
                         Food for You
                     </Text>
                 </TouchableOpacity>
@@ -163,22 +192,27 @@ const Items = () => {
                     autoplayInterval={4000}
                     loop={true}
                 />
-                <View style={{ height: '20%', justifyContent: 'center', alignItems: 'center', marginTop: '10%', justifyContent: 'space-between' }}>
+                <View
+                    style={{ height: '20%', justifyContent: 'center', alignItems: 'center', marginTop: '10%', justifyContent: 'space-between' }}>
                     <FlatList horizontal showsHorizontalScrollIndicator={false}
                         data={firstSetOfData}
                         renderItem={renderItemapi}
                         keyExtractor={item => item.food.foodId}
                     />
                 </View>
-                <View style={{ height: '20%', justifyContent: 'center', alignItems: 'center', marginTop: '-6%', justifyContent: 'space-between' }}>
+                <View
+                    style={{ height: '20%', justifyContent: 'center', alignItems: 'center', marginTop: '-6%', justifyContent: 'space-between' }}>
                     <FlatList horizontal showsHorizontalScrollIndicator={false}
                         data={secondSetOfData}
                         renderItem={renderItemapi}
                         keyExtractor={item => item.food.foodId}
                     />
                 </View>
-                <TouchableOpacity style={{ ...styles.foodforview }}>
-                    <Text style={{ ...styles.foodfortext, top: '90%' }}>
+                <TouchableOpacity
+                    style={{ ...styles.foodforview }}
+                    onPress={() => { navigation.navigate('Restaurant') }}>
+                    <Text
+                        style={{ ...styles.foodfortext, top: '90%' }}>
                         Restaurant for You
                     </Text>
                 </TouchableOpacity>
@@ -192,17 +226,22 @@ const Items = () => {
                     loop={true}
                 />
             </ScrollView>
-            <View style={{ height: '8%', flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 10, top: 15, marginTop: -10 }}>
-                <TouchableOpacity onPress={() => { navigation.navigate('Login'); }}>
+            <View
+                style={{ height: '8%', flexDirection: 'row', justifyContent: 'space-around', paddingVertical: 10, top: 15, marginTop: -10 }}>
+                <TouchableOpacity
+                    onPress={() => { navigation.navigate('Login'); }}>
                     <AntDesign name="home" size={24} color={activeIcon === 'home' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity >
-                <TouchableOpacity onPress={() => setActiveIcon('search1')} >
+                <TouchableOpacity
+                    onPress={() => setActiveIcon('search1')} >
                     <AntDesign name="search1" size={24} color={activeIcon === 'search1' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => setActiveIcon('bells')} >
+                <TouchableOpacity
+                    onPress={() => setActiveIcon('bells')} >
                     <AntDesign name="bells" size={24} color={activeIcon === 'bells' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => { navigation.navigate('Profile'); }} >
+                <TouchableOpacity
+                    onPress={() => { navigation.navigate('Profile'); }} >
                     <Fontisto name="person" size={24} color={activeIcon === 'person' ? '#6DBC2B' : '#000000'} />
                 </TouchableOpacity>
             </View>

@@ -84,8 +84,10 @@ const Address = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <View style={{ top: '50%' }}>
-        <TouchableOpacity onPress={handlelocationPress}>
+      <View
+        style={{ top: '50%' }}>
+        <TouchableOpacity
+          onPress={handlelocationPress}>
           <View>
             <Text
               style={styles.svrtext}>
@@ -94,25 +96,34 @@ const Address = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <View style={{ flexDirection: 'row', justifyContent: 'space-around', left: '4%' }}>
-        <View style={styles.homeview}>
-          <TouchableOpacity style={styles.address}>
+      <View
+        style={{ flexDirection: 'row', justifyContent: 'space-around', left: '4%' }}>
+        <View
+          style={styles.homeview}>
+          <TouchableOpacity
+            style={styles.address}>
             <AntDesign name="home" size={20} color="#FFFFFF" style={styles.icon} />
-            <Text style={styles.addresstext}>
+            <Text
+              style={styles.addresstext}>
               Home
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.homeview}>
-          <TouchableOpacity style={{ ...styles.address, backgroundColor: '#FFFFFF' }}>
+        <View
+          style={styles.homeview}>
+          <TouchableOpacity
+            style={{ ...styles.address, backgroundColor: '#FFFFFF' }}>
             <Icon name="office-building" size={34} style={{ ...styles.icon, color: '#6DBC2B' }} />
-            <Text style={{ ...styles.addresstext, color: '#000000' }}>
+            <Text
+              style={{ ...styles.addresstext, color: '#000000' }}>
               Office
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.homeview}>
-          <TouchableOpacity style={{ ...styles.address, backgroundColor: '#FFFFFF' }}>
+        <View
+          style={styles.homeview}>
+          <TouchableOpacity
+            style={{ ...styles.address, backgroundColor: '#FFFFFF' }}>
             <Ionicons
               name="location"
               size={25}
@@ -124,9 +135,12 @@ const Address = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.continueview}>
-        <TouchableOpacity onPress={onPress}>
-          <Text style={styles.continuetext}>
+      <View
+        style={styles.continueview}>
+        <TouchableOpacity
+          onPress={onPress}>
+          <Text
+            style={styles.continuetext}>
             Continue
           </Text>
         </TouchableOpacity>
@@ -182,9 +196,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#6DBC2B',
     height: '6%',
     borderBottomRightRadius: 15,
-    borderBottomLeftRadius:15,
+    borderBottomLeftRadius: 15,
     justifyContent: 'center',
-    bottom:'-2%'
+    bottom: '-2%'
   },
   continuetext: {
     textAlign: 'center',

@@ -21,7 +21,7 @@ const Main = () => {
         <SafeAreaView>
             <View>
                 <ImageBackground
-                    source={require("../../assets/splash.gif")}
+                    source={require("../../assets/res2.jpg")}
                     style={{ height: '100%',width:'100%' }}
                     resizeMode="cover"
                 >

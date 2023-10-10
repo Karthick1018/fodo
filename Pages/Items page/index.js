@@ -44,73 +44,105 @@ const Foods = () => {
         }
 
         return (
-            <View style={{ flexDirection: "row" }} key={index}>
-                <Image source={source} style={{ height: 100, width: 100, borderRadius: 14, marginLeft: '10%', marginTop: '10%' }} />
-                <View style={{ flexDirection: 'row', borderWidth: 2, marginLeft: '28%', marginTop: '15%', height: '30%', width: '30%', alignItems: 'center', borderRadius: 20, borderColor }}>
-                    <TouchableOpacity onPress={() => increaseCount(index)} style={{ marginLeft: '10%' }}>
-                        <Text style={{ fontSize: 30, right: '15%', color }}>+</Text>
+            <View
+                style={{ flexDirection: "row" }} key={index}>
+                <Image
+                    source={source}
+                    style={{ height: 100, width: 100, borderRadius: 14, marginLeft: '10%', marginTop: '10%' }} />
+                <View
+                    style={{ flexDirection: 'row', borderWidth: 2, marginLeft: '28%', marginTop: '15%', height: '30%', width: '30%', alignItems: 'center', borderRadius: 20, borderColor }}>
+                    <TouchableOpacity
+                        onPress={() => increaseCount(index)} style={{ marginLeft: '10%' }}>
+                        <Text
+                            style={{ fontSize: 30, right: '15%', color }}>+</Text>
                     </TouchableOpacity>
-                    <Text style={{ fontSize: 20, marginLeft: '20%', color: '#000000' }}>{counts[index]}</Text>
-                    <TouchableOpacity onPress={() => decreaseCount(index)}>
-                        <Text style={{ fontSize: 30, marginLeft: '50%', color }}>-</Text>
+                    <Text
+                        style={{ fontSize: 20, marginLeft: '20%', color: '#000000' }}>
+                        {counts[index]}
+                    </Text>
+                    <TouchableOpacity
+                        onPress={() => decreaseCount(index)}>
+                        <Text
+                            style={{ fontSize: 30, marginLeft: '50%', color }}>-</Text>
                     </TouchableOpacity>
                 </View>
-                <Text style={{ fontSize: 20, marginLeft: '-53%', marginTop: '18%', color: '#000000', opacity: 0.5 }}>{itemName}</Text>
-
+                <Text
+                    style={{ fontSize: 20, marginLeft: '-53%', marginTop: '18%', color: '#000000', opacity: 0.5 }}>{itemName}</Text>
             </View>
         );
     };
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView
+            style={styles.container}>
             <ScrollView>
-                <TouchableOpacity style={styles.backiconview} onPress={() => { navigation.navigate('Items') }}>
+                <TouchableOpacity
+                    style={styles.backiconview}
+                    onPress={() => { navigation.navigate('Items') }}>
                     <Icon name="arrow-back" size={30} />
                 </TouchableOpacity>
-                <View style={styles.restaurantview}>
-                    <Text style={styles.restauranttext}>
+                <View
+                    style={styles.restaurantview}>
+                    <Text
+                        style={styles.restauranttext}>
                         Aasif Restaurant
                     </Text>
                 </View>
-                <View style={styles.starview}>
+                <View
+                    style={styles.starview}>
                     <Text style={{ fontSize: 16 }}>
                         Indian, Chinese
                     </Text>
-                    <TouchableOpacity style={{ marginLeft: '20%', bottom: '2%', flexDirection: 'row', backgroundColor: '#ebedf0', width: '18%', borderRadius: 10, height: '150%', opacity: 0.5 }}>
+                    <TouchableOpacity
+                        style={{ marginLeft: '20%', bottom: '2%', flexDirection: 'row', backgroundColor: '#ebedf0', width: '18%', borderRadius: 10, height: '150%', opacity: 0.5 }}>
                         <Entypo name="star" size={24} style={{ top: '5%', left: '10%' }} />
-                        <Text style={{ top: '10%', left: '30%' }}>
+                        <Text
+                            style={{ top: '10%', left: '30%' }}>
                             4.5
                         </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ marginLeft: '6%', bottom: '2%', flexDirection: 'row', backgroundColor: '#ebedf0', width: '22%', borderRadius: 10, height: '150%', opacity: 0.5 }}>
+                    <TouchableOpacity
+                        style={{ marginLeft: '6%', bottom: '2%', flexDirection: 'row', backgroundColor: '#ebedf0', width: '22%', borderRadius: 10, height: '150%', opacity: 0.5 }}>
                         <Entypo name="location" size={24} style={{ top: '5%', left: '10%' }} />
-                        <Text style={{ top: '10%', left: '30%' }}>
+                        <Text
+                            style={{ top: '10%', left: '30%' }}>
                             10 Km
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.tabContainer}>
-                    <TouchableOpacity style={styles.tab} onPress={() => handleTabPress('Starter')}>
-                        <Text style={selectedTab === 'Starter' ? styles.activeTabText : styles.tabText}>Starter</Text>
+                <View
+                    style={styles.tabContainer}>
+                    <TouchableOpacity
+                        style={styles.tab}
+                        onPress={() => handleTabPress('Starter')}>
+                        <Text
+                            style={selectedTab === 'Starter' ? styles.activeTabText : styles.tabText}>Starter</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.tab} onPress={() => handleTabPress('Veg')}>
-                        <Text style={selectedTab === 'Veg' ? styles.activeTabText : styles.tabText}>Veg</Text>
+                    <TouchableOpacity style={styles.tab}
+                        onPress={() => handleTabPress('Veg')}>
+                        <Text
+                            style={selectedTab === 'Veg' ? styles.activeTabText : styles.tabText}>Veg</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.tab} onPress={() => handleTabPress('Non Veg')}>
+                    <TouchableOpacity
+                        style={styles.tab}
+                        onPress={() => handleTabPress('Non Veg')}>
                         <Text style={selectedTab === 'Non Veg' ? styles.activeTabText : styles.tabText}>Non Veg</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.tab} onPress={() => handleTabPress('Fast Food')}>
+                    <TouchableOpacity style={styles.tab}
+                        onPress={() => handleTabPress('Fast Food')}>
                         <Text style={selectedTab === 'Fast Food' ? styles.activeTabText : styles.tabText}>Fast Food</Text>
                     </TouchableOpacity>
                 </View>
-                <Text style={{ fontSize: 20, top: '2%', left: '50%', fontWeight: 'bold', color: '#6DBC2B' }}>
+                <Text
+                    style={{ fontSize: 20, top: '2%', left: '50%', fontWeight: 'bold', color: '#6DBC2B' }}>
                     Veg
                 </Text>
                 {renderFoodItem(0, require('../../assets/idli.jpg'), 'Idli')}
                 {renderFoodItem(1, require('../../assets/dosa.jpeg'), 'Dosa')}
                 {renderFoodItem(2, require('../../assets/chapati.jpeg'), 'Chapati')}
                 {renderFoodItem(3, require('../../assets/salad.jpg'), 'Salad')}
-                <Text style={{ fontSize: 20, top: '2%', left: '50%', fontWeight: 'bold', color: '#8c2038' }}>
+                <Text
+                    style={{ fontSize: 20, top: '2%', left: '50%', fontWeight: 'bold', color: '#8c2038' }}>
                     Non Veg
                 </Text>
                 {renderFoodItem(4, require('../../assets/tandoori.jpg'), 'Tandoori')}
@@ -118,14 +150,19 @@ const Foods = () => {
                 {renderFoodItem(6, require('../../assets/lollipop.jpg'), 'Lollipop')}
                 {renderFoodItem(7, require('../../assets/biryani.jpg'), 'Biryani')}
             </ScrollView>
-            <View style={{ backgroundColor: '#6DBC2B', height: '7%', flexDirection: 'row' }}>
-                <AntDesign name="shoppingcart" size={30} style={{ marginLeft: '10%', marginTop: '3%' ,color:'#FFFFFF'}} />
-                <Text style={{ marginLeft: '8%', marginTop: '4%', fontSize: 18, color: '#FFFFFF' }}>
+            <View
+                style={{ backgroundColor: '#6DBC2B', height: '7%', flexDirection: 'row' }}>
+                <AntDesign name="shoppingcart" size={30} style={{ marginLeft: '10%', marginTop: '3%', color: '#FFFFFF' }} />
+                <Text
+                    style={{ marginLeft: '8%', marginTop: '4%', fontSize: 18, color: '#FFFFFF' }}>
                     2 item | ₹ 100
                 </Text>
+                <TouchableOpacity
+                    style={{ marginLeft: '20%', top: '2%', borderWidth: 1, width: '20%', height: '65%', backgroundColor: '#FFFFFF', borderRadius: 20, borderColor: '#FFFFFF' }}
+                    onPress={() => { navigation.navigate('Cart') }}>
 
-                <TouchableOpacity style={{ marginLeft: '20%', top: '2%', borderWidth: 1, width: '20%', height: '65%', backgroundColor: '#FFFFFF', borderRadius: 20, borderColor: '#FFFFFF' }}>
-                    <Text style={{ textAlign: 'center', top: '20%', fontWeight: 'bold', color: '#6DBC2B' }}>
+                    <Text
+                        style={{ textAlign: 'center', top: '20%', fontWeight: 'bold', color: '#6DBC2B' }}>
                         View Cart
                     </Text>
                 </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ImageBackground, KeyboardAvoidingView, Linking, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ImageBackground, KeyboardAvoidingView, Linking, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
@@ -8,7 +8,8 @@ const Login = () => {
         navigation.navigate('Verification')
     }
     return (
-        <SafeAreaView style={{ flex: 1 ,backgroundColor:'#FFFFFF'}}>
+        <SafeAreaView
+            style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
             <KeyboardAvoidingView
                 behavior={Platform.OS === "Android" ? "padding" : "height"}>
                 <View
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginLeft: '6%'
     },
-    otpbutton: {    
+    otpbutton: {
         borderWidth: 0.5,
         borderColor: '#0c94e8',
         borderRadius: 10,
@@ -110,8 +111,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#3ae83a',
     },
     otptext: {
-        fontSize: 13,
-        textAlign: 'center'
+        fontSize: 15,
+        textAlign: 'center',
+        color: '#FFFFFF',
+        fontWeight: 'bold'
     },
     fbview: {
         height: '7%',
@@ -132,5 +135,5 @@ const styles = StyleSheet.create({
         top: '20%',
         color: '#080808'
     },
-   
+
 })
